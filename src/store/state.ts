@@ -1,3 +1,35 @@
+/**
+ * @interface 接口（Interface）是行为的抽象，行动要类（Class）去实现（Implements）
+ * ts中的接口 1. 定义对象的类型； 2. 对象的形状（shape）进行秒速
+ */
+
+//  一个行为的抽象 报警
+interface Alarm {
+  alert(): any;
+}
+
+// 一个行为的实现 给车添加报警的功能
+class Car implements Alarm {
+  alert() {
+    console.log("Car alert");
+  }
+}
+
+// 一个有行为和属性的基类
+class Door {
+  name: string = "door";
+  open() {
+    console.log("open the door");
+  }
+}
+
+// 继承门的行为和属性，然后实现报警这个抽象的行为
+class SecurityDoor extends Door implements Alarm {
+  alert() {
+    console.log("SecurityDoor");
+  }
+}
+
 export interface Card {
   src: string;
   content?: string;
